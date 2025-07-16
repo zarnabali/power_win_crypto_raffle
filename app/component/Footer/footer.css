@@ -1,0 +1,309 @@
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .footer-container {
+    width: 100%;
+    padding: 48px 24px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+  
+  /* Logo section */
+  .logo-section {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  @media (min-width: 1024px) {
+    .logo-section {
+      grid-column: span 4;
+    }
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo-diamond {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #ef4444 0%, #eab308 100%);
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-diamond-inner {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #dc2626 0%, #d97706 100%);
+    transform: rotate(-45deg);
+  }
+  
+  .logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .tagline {
+    color: #d1d5db;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .description {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 384px;
+  }
+  
+  .age-restriction {
+    color: #fb923c;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  /* Navigation sections */
+  .nav-section {
+    grid-column: span 1;
+  }
+  
+  @media (min-width: 1024px) {
+    .nav-section:nth-child(2) {
+      grid-column: 6 / span 2;
+    }
+  
+    .nav-section:nth-child(3) {
+      grid-column: span 2;
+    }
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #d1d5db;
+  }
+  
+  /* Support section */
+  .support-section {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  @media (min-width: 1024px) {
+    .support-section {
+      grid-column: 10 / span 3;
+    }
+  }
+  
+  .support-title {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .support-email {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .support-email:hover {
+    color: #93c5fd;
+  }
+  
+  .telegram-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+  }
+  
+  .telegram-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .telegram-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Bottom section */
+  .footer-bottom {
+    border-top: 1px solid #374151;
+  }
+  
+  .footer-bottom-container {
+    width: 100%;
+    padding: 16px 24px;
+  }
+  
+  .footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-bottom-content {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+  
+  .legal-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    color: #9ca3af;
+  }
+  
+  .crypto-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .crypto-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .crypto-icon.bitcoin {
+    background-color: #f97316;
+  }
+  
+  .crypto-icon.ethereum {
+    background-color: #6b7280;
+  }
+  
+  .crypto-icon.usdc {
+    background-color: #2563eb;
+  }
+  
+  .crypto-icon.polygon {
+    background-color: #7c3aed;
+  }
+  
+  .crypto-icon-symbol {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .crypto-icon-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  
+  .legal-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .legal-link:hover {
+    color: #ffffff;
+  }
+  
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .social-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: #ffffff;
+  }
+  
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .tiktok-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .footer-container {
+      padding: 32px 16px;
+    }
+  
+    .footer-bottom-container {
+      padding: 16px 16px;
+    }
+  
+    .legal-section {
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .crypto-icons {
+      order: -1;
+    }
+  }
+  

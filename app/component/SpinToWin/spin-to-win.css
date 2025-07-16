@@ -1,0 +1,523 @@
+.spin-to-win-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 16px 40px 40px 40px;
+    background-color: #000000;
+    border-radius: 24px;
+    color: #ffffff;
+    margin: 0;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #333;
+  }
+  
+  @media (max-width: 1200px) {
+    .spin-to-win-container {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .spin-to-win-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin: 0;
+      padding: 24px;
+    }
+  }
+  
+  /* Confetti Canvas */
+  .confetti-canvas {
+    border-radius: 0;
+  }
+  
+  /* Left Combined Section - Spinner and Prizes */
+  .left-combined-section {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    border: 1px solid #333333; /* Updated to match winners-participants */
+    border-radius: 12px;
+    padding: 24px;
+    align-items: stretch;
+    height: 100%;
+    position: relative;
+    background-color: #000000; /* Added to match winners-participants */
+  }
+  
+  /* Spinner Section */
+  .spinner-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    flex: 1;
+  }
+  
+  .spinner-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+  
+  .spinner-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #dc2626 0deg 252deg, #4a4a4a 252deg 360deg);
+    position: relative;
+    transition: transform 5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .spinner-circle.spinning {
+    animation: spinWheel 5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards, animateProgress 5s cubic-bezier(0.4, 0.0, 0.2, 1)
+      forwards;
+  }
+  
+  @keyframes spinWheel {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+  
+  @keyframes animateProgress {
+    0% {
+      background: conic-gradient(from 0deg, #dc2626 0deg 252deg, #4a4a4a 252deg 360deg);
+    }
+    25% {
+      background: conic-gradient(from 90deg, #dc2626 0deg 252deg, #4a4a4a 252deg 360deg);
+    }
+    50% {
+      background: conic-gradient(from 180deg, #dc2626 0deg 252deg, #4a4a4a 252deg 360deg);
+    }
+    75% {
+      background: conic-gradient(from 270deg, #dc2626 0deg 252deg, #4a4a4a 252deg 360deg);
+    }
+    100% {
+      background: conic-gradient(from 360deg, #dc2626 0deg 252deg, #4a4a4a 252deg 360deg);
+    }
+  }
+  
+  .spinner-inner {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .spinner-percentage {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .spinner-label {
+    font-size: 14px;
+    color: #9ca3af;
+  }
+  
+  .spinner-pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 16px solid #ffffff;
+    transform: translate(-50%, -50%) translateX(110px);
+    transform-origin: -110px 0;
+  }
+  
+  .spinner-pointer.spinning {
+    animation: rotateAroundCircle 5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+  }
+  
+  @keyframes rotateAroundCircle {
+    0% {
+      transform: translate(-50%, -50%) translateX(110px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateX(110px) rotate(1800deg);
+    }
+  }
+  
+  .demo-spin-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #232323, #181818);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    min-width: 180px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    gap: 16px;
+  }
+  
+  .demo-spin-button:hover {
+    background: linear-gradient(145deg, #2a2a2a, #232323);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  
+  .demo-spin-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: linear-gradient(145deg, #181818, #111);
+  }
+  
+  .demo-spin-button .button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .demo-spin-button .button-badge {
+    background: #232323;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 28px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    margin-left: 10px;
+  }
+  
+  .demo-spin-button svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  /* Celebration Burst - Full Column Coverage */
+  .celebration-burst-full {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .confetti-burst {
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+    animation: burstOutFull 3s ease-out forwards;
+  }
+  
+  @keyframes burstOutFull {
+    0% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0px) rotate(0deg);
+      opacity: 1;
+      scale: 1;
+    }
+    20% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(calc(var(--distance) * 0.3)) rotate(90deg);
+      opacity: 1;
+      scale: 1.2;
+    }
+    40% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(calc(var(--distance) * 0.6)) rotate(180deg)
+        translateY(-20px);
+      opacity: 1;
+      scale: 1.1;
+    }
+    60% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(calc(var(--distance) * 0.8)) rotate(270deg)
+        translateY(10px);
+      opacity: 0.9;
+      scale: 1;
+    }
+    80% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--distance)) rotate(360deg) translateY(30px);
+      opacity: 0.6;
+      scale: 0.9;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(calc(var(--distance) + 20px)) rotate(450deg)
+        translateY(60px);
+      opacity: 0;
+      scale: 0.7;
+    }
+  }
+  
+  .confetti-pink {
+    background-color: #ec4899;
+  }
+  
+  .confetti-purple {
+    background-color: #8b5cf6;
+  }
+  
+  .confetti-yellow {
+    background-color: #fbbf24;
+  }
+  
+  .confetti-blue {
+    background-color: #3b82f6;
+  }
+  
+  .confetti-green {
+    background-color: #10b981;
+  }
+  
+  .confetti-orange {
+    background-color: #f97316;
+  }
+  
+  .confetti-red {
+    background-color: #ef4444;
+  }
+  
+  .confetti-cyan {
+    background-color: #06b6d4;
+  }
+  
+  /* Prizes Section */
+  .prizes-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 120px;
+  }
+  
+  .prize-item {
+    width: 90px;
+    height: 90px;
+    background-color: #1a1a1a;
+    border: 0.3px solid #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .prize-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .prize-multiplier {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  /* Right Combined Section - Prize Info and Instant Win */
+  .combined-section {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    border: 1px solid #333333; /* Updated to match winners-participants */
+    border-radius: 12px;
+    padding: 24px;
+    align-items: stretch;
+    height: 100%;
+    background-color: #000000; /* Added to match winners-participants */
+  }
+  
+  /* Prize Info Section */
+  .prize-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+  }
+  
+  .prize-info-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  
+  .prize-info-subtitle {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 12px;
+  }
+  
+  .prize-info-image {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+  }
+  
+  /* Instant Win Section */
+  .instant-win {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .instant-win-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+  
+  .instant-win-description {
+    font-size: 11px;
+    color: #d1d5db;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  
+  .instant-win-section {
+    margin-bottom: 8px;
+  }
+  
+  .instant-win-section h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  
+  .instant-win-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .instant-win-list li {
+    font-size: 10px;
+    color: #d1d5db;
+    line-height: 1.2;
+    margin-bottom: 1px;
+    padding-left: 10px;
+    position: relative;
+  }
+  
+  .instant-win-list li::before {
+    content: "•";
+    color: #dc2626;
+    position: absolute;
+    left: 0;
+    font-size: 10px;
+  }
+  
+  .total-prizes {
+    font-size: 10px;
+    color: #d1d5db;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .left-combined-section {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    .combined-section {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .prizes-section {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: auto;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .spinner-container {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .spinner-circle {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .spinner-percentage {
+      font-size: 24px;
+    }
+  
+    .prize-item {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .prize-item img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .prize-info-image {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .spinner-pointer {
+      transform-origin: -3px 50%;
+    }
+  
+    .demo-spin-button {
+      min-width: 140px;
+      font-size: 14px;
+    }
+  }
+  
+.left-combined-section,
+.combined-section {
+  border-bottom: none;
+  border-radius: 0;
+}
+  
