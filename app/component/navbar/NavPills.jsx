@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 const NavigationButtons = () => {
   return (
-    <div  style={{ width: '100%' }}>
+    <div className="navpills-overlay">
       <nav
         className="flex flex-row items-center gap-4"
         style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '16px', width: '100%' }}
@@ -28,6 +28,15 @@ const NavigationButtons = () => {
       </nav>
       
       <style jsx>{`
+        .navpills-overlay {
+          position: fixed;
+          top: 24px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: max-content;
+          z-index: 2001;
+          pointer-events: auto;
+        }
         .nav-button {
           background: #4a4a4a;
           border: 1px solid #a0a0a0;

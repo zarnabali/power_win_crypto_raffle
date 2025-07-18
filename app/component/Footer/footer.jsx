@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Left section - Logo and description */}
           <div className="logo-section">
             <div className="logo-container">
-              <img src="/Images/logo.png" alt="PowerWin Logo" className="footer-logo-img" style={{height: '90px', width: 'auto'}} />
+              <img src="/Images/logo.png" alt="PowerWin Logo" className="footer-logo-img" style={{height: '90this can px', width: 'auto'}} />
               
             </div>
 
