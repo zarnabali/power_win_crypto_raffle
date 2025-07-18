@@ -1,358 +1,292 @@
+/* Footer Styles */
 .footer {
   background: linear-gradient(to bottom, #000000C4, #00000047);
-    /* color: #ffffff; */
-  }
-  
-  .footer-container {
-    width: 100%;
-    padding: 64px 40px;
-  }
-  
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  @media (min-width: 1024px) {
-    .footer-grid {
-      grid-template-columns: repeat(12, 1fr);
-      padding-left: 40px;
-      gap: 24px;
-    }
-  }
-  
-  /* Logo section */
-  .logo-section {
-    grid-column: span 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  @media (min-width: 1024px) {
-    .logo-section {
-      grid-column: span 4;
-    }
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .logo-diamond {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #ef4444 0%, #eab308 100%);
-    transform: rotate(45deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo-diamond-inner {
-    width: 16px;
-    height: 16px;
-    background: linear-gradient(135deg, #dc2626 0%, #d97706 100%);
-    transform: rotate(-45deg);
-  }
-  
-  .logo-text {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  }
-  
-  .tagline {
-    color: #d1d5db;
-    font-size: 18px;
-    font-weight: 500;
-  }
-  
-  .description {
-    color: #9ca3af;
-    font-size: 16px;
-    line-height: 1.7;
-    max-width: 480px;
-  }
-  
-  .age-restriction {
-    color: #fb923c;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  
-  /* Navigation sections */
-  .nav-section {
-    grid-column: span 1;
-  }
-  
-  @media (min-width: 1024px) {
-    .nav-section:nth-child(2) {
-      grid-column: 6 / span 2;
-    }
-  
-    .nav-section:nth-child(3) {
-      grid-column: span 2;
-    }
-  }
-  
-  .nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 18px;
-    padding: 6px 0;
-  }
-  
-  .nav-link:hover {
-    color: #d1d5db;
-  }
-  
-  /* Support section */
-  .support-section {
-    grid-column: 10 / span 2;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  @media (min-width: 1024px) {
-    .support-section {
-      grid-column: 10 / span 2;
-    }
-  }
-  
-  .support-title {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 20px;
-  }
-  
-  .support-email {
-    color: #60a5fa;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-  }
-  
-  .support-email:hover {
-    color: #93c5fd;
-  }
-  
-  .telegram-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: #2563eb;
-    color: #ffffff;
-    padding: 14px 32px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    white-space: nowrap;
-    text-align: center;
-    justify-content: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  
-  .telegram-button:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .telegram-icon {
-    width: 24px;
-    height: 24px;
-  }
-  
-  /* Bottom section */
-  .footer-bottom {
-    border-top: 1px solid #374151;
-  }
-  
-  .footer-bottom-container {
-    width: 100%;
-    padding: 16px 24px;
-  }
-  
+  overflow-x: hidden;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 64px 40px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 32px;
+  row-gap: 48px;
+  overflow-x: hidden;
+}
+
+/* Logo section */
+.logo-section {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo-img {
+  max-width: 100%;
+}
+
+.tagline {
+  color: #d1d5db;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.description {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.age-restriction {
+  color: #fb923c;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Navigation */
+.nav-section {
+  grid-column: span 2;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #d1d5db;
+}
+
+/* Support */
+.support-section {
+  grid-column: 10 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.support-title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.support-email {
+  color: #60a5fa;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.support-email:hover {
+  color: #93c5fd;
+}
+
+/* Telegram */
+.telegram-section {
+  grid-column: 12 / span 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  overflow-x: hidden;
+}
+
+.telegram-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.telegram-button:hover {
+  background-color: #1d4ed8;
+}
+
+.telegram-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid #374151;
+  overflow-x: hidden;
+}
+
+.footer-bottom-container {
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box;
+}
+
+.footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
   .footer-bottom-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  @media (min-width: 768px) {
-    .footer-bottom-content {
-      flex-direction: row;
-      gap: 0;
-    }
-  }
-  
-  .legal-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 24px;
-    font-size: 14px;
-    color: #9ca3af;
-  }
-  
-  .crypto-icons {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .crypto-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .crypto-icon.bitcoin {
-    background-color: #f97316;
-  }
-  
-  .crypto-icon.ethereum {
-    background-color: #6b7280;
-  }
-  
-  .crypto-icon.usdc {
-    background-color: #2563eb;
-  }
-  
-  .crypto-icon.polygon {
-    background-color: #7c3aed;
-  }
-  
-  .crypto-icon-symbol {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  
-  .crypto-icon-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #ffffff;
-    border-radius: 50%;
-  }
-  
-  .legal-link {
-    color: #9ca3af;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 16px;
-    padding: 0 8px;
-  }
-  
-  .legal-link:hover {
-    color: #ffffff;
-  }
-  
-  .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  .social-link {
-    color: #9ca3af;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .social-link:hover {
-    color: #ffffff;
-  }
-  
-  .social-icon {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .tiktok-icon {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 700;
-  }
-  
-  .telegram-section {
-    grid-column: 12 / span 2;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 0;
-    width: 100%;
-    max-width: 100%;
-    justify-content: flex-start;
-  }
-  
-  @media (min-width: 1024px) {
-    .telegram-section {
-      grid-column: 12 / span 2;
-      align-items: flex-start;
-      margin-top: 0;
-    }
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 767px) {
-    .footer-container {
-      padding: 32px 16px;
-    }
-  
-    .footer-bottom-container {
-      padding: 16px 16px;
-    }
-  
-    .legal-section {
-      justify-content: center;
-      text-align: center;
-    }
-  
-    .crypto-icons {
-      order: -1;
-    }
-  }
-  
-@media (max-width: 767px) {
-  .telegram-section {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .telegram-button {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-    white-space: normal;
+    flex-direction: row;
+    gap: 0;
   }
 }
-  
+
+.legal-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.legal-link {
+  color: #9ca3af;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+  color: #ffffff;
+}
+
+.crypto-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.crypto-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.crypto-icon:hover {
+  transform: scale(1.1);
+}
+
+.crypto-icon-symbol {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.crypto-icon-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.crypto-icon.bitcoin { background-color: #f97316; }
+.crypto-icon.ethereum { background-color: #6b7280; }
+.crypto-icon.usdc { background-color: #2563eb; }
+.crypto-icon.polygon { background-color: #7c3aed; }
+.crypto-icon.solana { background-color: #00ffa3; }
+.crypto-icon.sui { background-color: #7dd3fc; }
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .footer-container {
+    padding: 32px 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telegram-section {
+    align-items: center;
+    width: 100%;
+  }
+
+  .telegram-button {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .legal-section {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .crypto-icons {
+    order: -1;
+  }
+}
