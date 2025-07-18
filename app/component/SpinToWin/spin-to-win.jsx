@@ -11,20 +11,32 @@ export default function SpinToWin() {
 
   const handleDemoSpin = () => {
     if (isSpinning) return
-
+  
     setIsSpinning(true)
-
-    // Reset after 5 seconds and show celebration
+  
+    // Get the spinner pointer element
+    const spinnerPointer = document.querySelector('.spinner-pointer')
+    
+    // Generate random spin variant (1-5)
+    const spinVariant = Math.floor(Math.random() * 5) + 1
+    
+    // Apply random animation
+    spinnerPointer.style.animation = `spin-variant-${spinVariant} 4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards`
+  
+    // Reset after 4 seconds and show celebration
     setTimeout(() => {
       setIsSpinning(false)
       setShowCelebration(true)
       triggerConfetti()
-
+  
+      // Reset animation style
+      spinnerPointer.style.animation = ''
+  
       // Hide celebration after 3 seconds
       setTimeout(() => {
         setShowCelebration(false)
       }, 3000)
-    }, 5000)
+    }, 4000) // Changed from 5000 to 4000 to match animation duration
   }
 
   const triggerConfetti = () => {
@@ -48,7 +60,8 @@ export default function SpinToWin() {
           const leftRect = leftSection.getBoundingClientRect()
 
           // Calculate relative position within the left section
-          const originX = (spinnerRect.left + spinnerRect.width / 2 - leftRect.left) / leftRect.width
+          let originX = (spinnerRect.left + spinnerRect.width / 2 - leftRect.left) / leftRect.width
+          originX = Math.max(0, Math.min(1, originX - 0.15)); // Shift left, clamp between 0 and 1
           const originY = (spinnerRect.top + spinnerRect.height / 2 - leftRect.top) / leftRect.height
 
           // Multiple bursts for better effect
@@ -144,7 +157,7 @@ export default function SpinToWin() {
       </div>
 
       {/* Right Combined Section - Prize Info and Instant Win */}
-      <div className="combined-section">
+      <div className="combined-section" style={{ marginLeft: '20px' }}>
         {/* Prize Info Section */}
         <div className="prize-info">
           <h3 className="prize-info-title">Cartier Love Bracelet</h3>
@@ -153,6 +166,7 @@ export default function SpinToWin() {
             src="/Images/braclet.png"
             alt="Cartier Love Bracelet"
             className="prize-info-image"
+            style={{ display: 'block', height: '180px', width: 'auto', margin: '0 auto' }}
           />
         </div>
 
@@ -168,22 +182,22 @@ export default function SpinToWin() {
           <div className="instant-win-section">
             <h4>How does it work?</h4>
             <ul className="instant-win-list">
-              <li>Choose one of the 4 available prizes:</li>
-              <li>- Cartier Love Bracelet</li>
-              <li>- Hublot Classic Fusion Titanium 38mm</li>
-              <li>- iPhone 16 Pro Max 256GB</li>
-              <li>- Hermes Birkin Bag</li>
+              <li>1. Choose one of the 4 available prizes:</li>
+              <li><strong>- Cartier Love Bracelet</strong></li>
+              <li><strong>- Hublot Classic Fusion Titanium 38mm</strong></li>
+              <li><strong>- iPhone 16 Pro Max 256GB</strong></li>
+              <li><strong>- Hermes Birkin Bag</strong></li>
               <li>
-                Select the number of tickets (maximum 500) – the more you buy, the higher your win chance (up to 80%).
+                2. Select the number of tickets (maximum 500) – the more you buy, the higher your win chance (up to 80%).
               </li>
-              <li>Pay for your tickets and return to this page.</li>
-              <li>You'll get one single Spin for the selected prize. If luck is on your side, you win it instantly!</li>
+              <li>3. Pay for your tickets and return to this page.</li>
+              <li>4. You'll get one single Spin for the selected prize. If luck is on your side, you win it instantly!</li>
             </ul>
           </div>
 
           <div className="instant-win-section">
             <h4>Important Rules:</h4>
-            <ul className="instant-win-list">
+            <ul className="instant-win-list another">
               <li>You only get one Spin per purchase.</li>
               <li>You can select only one prize from the 4 for each attempt.</li>
               <li>Your win chance is clearly displayed before payment.</li>

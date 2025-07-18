@@ -1,14 +1,13 @@
 /* Footer Styles */
 .footer {
   background: linear-gradient(to bottom, #000000C4, #00000047);
-  overflow-x: hidden;
+  font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .footer-container {
   width: 100%;
-  padding: 64px 40px;
+  padding: 30px 30px;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 .footer-grid {
@@ -16,7 +15,7 @@
   grid-template-columns: repeat(12, 1fr);
   column-gap: 32px;
   row-gap: 48px;
-  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Logo section */
@@ -80,7 +79,7 @@
 
 /* Support */
 .support-section {
-  grid-column: 10 / span 2;
+  grid-column: span 2;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -105,48 +104,45 @@
 
 /* Telegram */
 .telegram-section {
-  grid-column: 12 / span 1;
+  grid-column: span 2;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 16px;
-  overflow-x: hidden;
 }
 
 .telegram-button {
-  display: inline-flex;
+  background: #229ED9;
+  color: #fff;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background-color: #2563eb;
-  color: #ffffff;
-  padding: 14px 32px;
-  border-radius: 8px;
-  text-decoration: none;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 30px;
   font-size: 18px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 2px 12px 0 rgba(34,158,217,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
   white-space: nowrap;
+  min-width: fit-content;
 }
 
 .telegram-button:hover {
-  background-color: #1d4ed8;
+  background: #37b5f7;
+  color: #fff;
+  box-shadow: 0 4px 24px 0 rgba(34,158,217,0.18);
 }
 
 .telegram-icon {
-  width: 24px;
-  height: 24px;
+  font-size: 22px;
+  color: #fff;
 }
 
 /* Footer Bottom */
 .footer-bottom {
   border-top: 1px solid #374151;
-  overflow-x: hidden;
 }
 
 .footer-bottom-container {
@@ -161,7 +157,6 @@
   gap: 16px;
   align-items: center;
   justify-content: space-between;
-  overflow-x: hidden;
   width: 100%;
 }
 

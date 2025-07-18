@@ -134,7 +134,6 @@ export default function BuyTicketsSection() {
       {/* Right Column - Description */}
       <div className="description-column" style={{ position: 'relative' }}>
         {/* Ellipse shadow under car image */}
-        <div className="ellipse-shadow"></div>
         <h2 className="column-title">Description</h2>
         <div className="description-content">
           <h3 className="model-title">Model: Lamborghini Aventador LP 770-4 SVJ Cabrio</h3>

@@ -33,7 +33,11 @@ export default function WinnersParticipants() {
     <div className="winners-participants-container">
       {/* Spin to Win Winners Section */}
       <div className="section-card">
-        <h2 className="section-title">Spin to Win Winners</h2>
+        <h2 className="section-title" style={{ marginBottom: '15px', marginTop: '0' }}>Spin to Win Winners</h2>
+        <div style={{ display: 'flex', gap: '0px', marginBottom: '20px',marginRight: '20px',justifyContent: 'space-around' }}>
+          <button className="winner-section-btn">Participant Name</button>
+          <button className="winner-section-btn">Provably Fair</button>
+        </div>
 
         <div className="data-table">
           <div className="table-header">
@@ -59,7 +63,7 @@ export default function WinnersParticipants() {
 
       {/* PowerWin Participants Section */}
       <div className="section-card">
-        <h2 className="section-title">PowerWin Participants</h2>
+        <h2 className="section-title" style={{ marginBottom: '15px', marginTop: '0' }}>PowerWin Participants</h2>
 
         <div className="search-container">
           <input type="text" placeholder="Participant Name" className="search-input" />

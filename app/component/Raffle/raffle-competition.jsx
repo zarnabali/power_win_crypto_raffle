@@ -40,7 +40,7 @@ export default function RaffleCompetition() {
     <div className="raffle-competition-container">
       {/* Header */}
       <div className="raffle-header">
-        <h1 className="raffle-tagline">Blockchain Raffles. Real Rewards.</h1>
+        <img src="/hero.svg" alt="Blockchain Raffles. Real Rewards." style={{ paddingTop: '10px',width: '100%', maxWidth: '370px', height: 'auto', display: 'block'}} />
       </div>
 
       {/* Main Content */}
@@ -49,7 +49,10 @@ export default function RaffleCompetition() {
         <div className="raffle-info">
           <div className="raffle-title-section">
             <h2 className="raffle-title">Lamborghini Aventador LP 770-4 SVJ Cabrio</h2>
-            <div className="status-badge">Ongoing</div>
+            <div className="status-badge">
+              <img src="/Vector.svg" alt="status icon" width="15" height="12" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '8px' }} />
+              Ongoing
+            </div>
           </div>
 
           <p className="cash-alternative">Cash Alternative - $500,000</p>
@@ -139,16 +142,16 @@ export default function RaffleCompetition() {
         <div className="raffle-visual">
           <div className="car-ellipse-container">
             <div className="car-ellipse">
-              {/* Ellipse using SVG for perfect control */}
-              <svg width="100%" height="100%" viewBox="0 0 600 160" style={{ position: 'absolute', left: 0, bottom: 0, zIndex: 1 }}>
-                <ellipse cx="300" cy="140" rx="290" ry="60" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="2" />
-              </svg>
+              {/* Car image positioned to sit on ellipse */}
               <img
                 src="/Images/Lambo.png"
                 alt="Lamborghini Aventador LP 770-4 SVJ Cabrio"
                 className="car-image"
-                style={{ position: 'relative', zIndex: 2, width: '90%', height: 'auto', marginTop: '10px', marginBottom: '0' }}
               />
+              {/* Ellipse positioned behind/under the car */}
+              <svg className="ellipse-svg" viewBox="0 0 600 160">
+                <ellipse cx="300" cy="80" rx="290" ry="60" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="2" />
+              </svg>
             </div>
             <div className="price-display">
               <span>${ticketPrice.toFixed(2)}</span>
