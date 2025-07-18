@@ -1,7 +1,7 @@
 .winners-participants-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40 !important;
+  gap: 40px !important;
   padding: 40px;
   border-radius: 24px;
   color: #ffffff;
