@@ -1,5 +1,5 @@
 .raffle-competition-container {
-    background-color: #000000;
+    background-color: linear-gradient(top #8C8C8CCC 80%,#0000004D 30%);
     color: #ffffff;
     padding: 40px;
     border: 1px solid #333333;
@@ -297,7 +297,7 @@
     height: 340px;
     padding-bottom: 48px;
   }
-
+  
   .car-ellipse svg {
     position: absolute;
     left: 0;
@@ -307,7 +307,7 @@
     pointer-events: none;
     z-index: 5;
   }
-
+  
   .car-image {
     position: relative;
     z-index: 3;
@@ -320,7 +320,7 @@
     object-fit: contain;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
   }
-
+  
   .price-display {
     position: absolute;
     left: 50%;
@@ -438,5 +438,5 @@
 }
 .progress-ticks-unfilled::after {
   display: none;
-}
+  }
   

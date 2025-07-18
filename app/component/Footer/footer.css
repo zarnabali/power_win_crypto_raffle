@@ -5,18 +5,20 @@
   
   .footer-container {
     width: 100%;
-    padding: 48px 24px;
+    padding: 64px 40px;
   }
   
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
   
   @media (min-width: 1024px) {
     .footer-grid {
       grid-template-columns: repeat(12, 1fr);
+      padding-left: 40px;
+      gap: 24px;
     }
   }
   
@@ -58,27 +60,27 @@
   }
   
   .logo-text {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
   
   .tagline {
     color: #d1d5db;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
   }
   
   .description {
     color: #9ca3af;
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 384px;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 480px;
   }
   
   .age-restriction {
     color: #fb923c;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
   }
   
@@ -107,6 +109,8 @@
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 18px;
+    padding: 6px 0;
   }
   
   .nav-link:hover {
@@ -115,7 +119,7 @@
   
   /* Support section */
   .support-section {
-    grid-column: span 1;
+    grid-column: 10 / span 2;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -123,20 +127,20 @@
   
   @media (min-width: 1024px) {
     .support-section {
-      grid-column: 10 / span 3;
+      grid-column: 10 / span 2;
     }
   }
   
   .support-title {
     color: #ffffff;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 20px;
   }
   
   .support-email {
     color: #60a5fa;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     transition: color 0.3s ease;
   }
   
@@ -147,16 +151,23 @@
   .telegram-button {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     background-color: #2563eb;
     color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 14px 32px;
+    border-radius: 12px;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     transition: background-color 0.3s ease;
-    width: fit-content;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   
   .telegram-button:hover {
@@ -164,8 +175,8 @@
   }
   
   .telegram-icon {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
   }
   
   /* Bottom section */
@@ -209,8 +220,8 @@
   }
   
   .crypto-icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -235,7 +246,7 @@
   
   .crypto-icon-symbol {
     color: #ffffff;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
   }
   
@@ -250,6 +261,8 @@
     color: #9ca3af;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 16px;
+    padding: 0 8px;
   }
   
   .legal-link:hover {
@@ -273,18 +286,38 @@
   }
   
   .social-icon {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
   }
   
   .tiktok-icon {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 700;
+  }
+  
+  .telegram-section {
+    grid-column: 12 / span 2;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+  
+  @media (min-width: 1024px) {
+    .telegram-section {
+      grid-column: 12 / span 2;
+      align-items: flex-start;
+      margin-top: 0;
+    }
   }
   
   /* Responsive adjustments */
@@ -306,4 +339,20 @@
       order: -1;
     }
   }
+  
+@media (max-width: 767px) {
+  .telegram-section {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .telegram-button {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    white-space: normal;
+  }
+}
   

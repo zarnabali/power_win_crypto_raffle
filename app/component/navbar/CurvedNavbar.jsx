@@ -12,9 +12,9 @@ const CurvedNavbar = ({ children }) => {
         {/* Logo Section */}
         <div className="logo-section">
           <div className="logo-icon">
-            <div className="diamond-shape"></div>
+            <img src="/Images/logo.png" alt="PowerWin Logo" className="navbar-logo-img" style={{height: '80px', width: 'auto'}} />
           </div>
-          <span className="logo-text">POWER WIN</span>
+          
         </div>
 
         {/* Right Section */}

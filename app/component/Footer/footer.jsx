@@ -11,10 +11,8 @@ export default function Footer() {
           {/* Left section - Logo and description */}
           <div className="logo-section">
             <div className="logo-container">
-              <div className="logo-diamond">
-                <div className="logo-diamond-inner"></div>
-              </div>
-              <span className="logo-text">POWER WIN</span>
+              <img src="/Images/logo.png" alt="PowerWin Logo" className="footer-logo-img" style={{height: '90px', width: 'auto'}} />
+              
             </div>
 
             <p className="tagline">Blockchain Raffles. Real Rewards.</p>
@@ -69,6 +67,10 @@ export default function Footer() {
             <Link href="mailto:powerwin@crypto.com" className="support-email">
               powerwin@crypto.com
             </Link>
+          </div>
+
+          {/* New column - Join Telegram button */}
+          <div className="telegram-section">
             <Link href="#" className="telegram-button">
               <Send className="telegram-icon" />
               <span>Join Telegram</span>

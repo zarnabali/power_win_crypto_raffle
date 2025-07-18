@@ -125,20 +125,20 @@ export default function SpinToWin() {
         {/* Prizes Section */}
         <div className="prizes-section">
           <div className="prize-item">
-            <img src="/placeholder.svg?height=60&width=60&text=Bracelet" alt="Gold Bracelet" />
+            <img src="Images/braclet.png" />
           </div>
 
           <div className="prize-item">
-            <img src="/placeholder.svg?height=60&width=60&text=Watch" alt="Luxury Watch" />
+            <img src="Images/watch.png" alt="Luxury Watch" />
           </div>
 
           <div className="prize-item">
-            <img src="/placeholder.svg?height=60&width=60&text=iPhone" alt="iPhone" />
+            <img src="\Images\iPhone.png" alt="iPhone" />
             <div className="prize-multiplier">4x</div>
           </div>
 
           <div className="prize-item">
-            <img src="/placeholder.svg?height=60&width=60&text=Bag" alt="Designer Handbag" />
+            <img src="/Images/bag.png" alt="Designer Handbag" />
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@ export default function SpinToWin() {
           <h3 className="prize-info-title">Cartier Love Bracelet</h3>
           <p className="prize-info-subtitle">Cash Alternative: $5000</p>
           <img
-            src="/placeholder.svg?height=160&width=160&text=Cartier+Bracelet"
+            src="/Images/braclet.png"
             alt="Cartier Love Bracelet"
             className="prize-info-image"
           />
