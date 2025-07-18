@@ -1,4 +1,5 @@
-import { User } from "lucide-react"
+import Avatar from "@mui/material/Avatar"
+import PersonIcon from "@mui/icons-material/Person"
 import "./winner-participant.css"
 
 const winnersData = [
@@ -43,10 +44,10 @@ export default function WinnersParticipants() {
 
           {winnersData.map((winner, index) => (
             <div key={index} className="table-row">
-              <div className="participant-cell">
-                <div className="participant-avatar">
-                  <User />
-                </div>
+              <div className="participant-cell bold-avatar-cell">
+                <Avatar sx={{ bgcolor: "#fff", width: 48, height: 48 }}>
+                  <PersonIcon sx={{ color: "#000", fontSize: 32 }} />
+                </Avatar>
                 <span className="participant-name">{winner.name}</span>
               </div>
               <div className="time-cell">{winner.time}</div>
@@ -73,10 +74,10 @@ export default function WinnersParticipants() {
 
           {participantsData.map((participant, index) => (
             <div key={index} className="table-row participants-table-row">
-              <div className="participant-cell">
-                <div className="participant-avatar">
-                  <User />
-                </div>
+              <div className="participant-cell bold-avatar-cell">
+                <Avatar sx={{ bgcolor: "#fff", width: 48, height: 48 }}>
+                  <PersonIcon sx={{ color: "#000", fontSize: 32 }} />
+                </Avatar>
                 <span className="participant-name">{participant.name}</span>
               </div>
               <div className="time-cell">{participant.time}</div>

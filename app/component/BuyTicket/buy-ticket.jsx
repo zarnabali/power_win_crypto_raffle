@@ -17,7 +17,7 @@ export default function BuyTicketsSection() {
   const totalPrice = ticketCount * ticketPrice
 
   const handleSliderChange = (e) => {
-    const value = Number.parseInt(e.target.value)
+    const value = parseFloat(e.target.value)
     setSliderValue(value)
     const tickets = Math.round((value / 100) * maxTickets)
     setTicketCount(Math.max(minTickets, tickets))
@@ -85,10 +85,10 @@ export default function BuyTicketsSection() {
           ))}
         </div>
 
-        {/* Ticket Display */}
-        <div className="ticket-display">
+        {/* Ticket Display - moved to slider-container */}
+        {/* <div className="ticket-display">
           <div className="ticket-count">{ticketCount} tickets</div>
-        </div>
+        </div> */}
 
         {/* Slider Section */}
         <div className="slider-section">
@@ -96,7 +96,21 @@ export default function BuyTicketsSection() {
             <Minus size={16} />
           </button>
 
-          <div className="slider-container">
+          <div className="slider-container" style={{ position: 'relative' }}>
+            {/* Ticket count cloud above slider thumb */}
+            <div
+              className="ticket-count-slider"
+              style={{
+                position: 'absolute',
+                left: `calc(${sliderValue}% - 40px)`, // 40px is half the width of the cloud for centering
+                top: '-60px', // increased space between cloud and slider
+                zIndex: 2,
+                pointerEvents: 'none',
+                // transition: 'left 0.2s cubic-bezier(.4,0,.2,1)', // removed for instant movement
+              }}
+            >
+              <div className="ticket-count">{ticketCount} tickets</div>
+            </div>
             <input
               type="range"
               min="0.2"

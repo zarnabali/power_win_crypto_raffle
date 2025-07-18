@@ -12,9 +12,11 @@ export default function Navbar() {
 
   return (
     <>
-   < NavPills className="navpills-standalone-wrapper"/>
+   {/* < NavPills className="navpills-standalone-wrapper"/> */}
    <div className="navbar-spacer" style={{height: "40px"}}></div>
-   <CurvedNavbar/>
+   <CurvedNavbar>
+     <NavPills />
+   </CurvedNavbar>
    </>
   );
 }

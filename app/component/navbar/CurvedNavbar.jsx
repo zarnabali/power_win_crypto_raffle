@@ -1,8 +1,13 @@
 import React from 'react';
 
-const CurvedNavbar = () => {
+const CurvedNavbar = ({ children }) => {
   return (
     <div className="navbar-container">
+      {children && (
+        <div className="navbar-children-overlay">
+          {children}
+        </div>
+      )}
       <div className="navbar-content">
         {/* Logo Section */}
         <div className="logo-section">
@@ -44,7 +49,7 @@ const CurvedNavbar = () => {
       </div>
 
       <style jsx>{`
-        .navbar-container {
+  .navbar-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -52,16 +57,18 @@ const CurvedNavbar = () => {
   height: 80px;
   width: 100%;
   overflow: hidden;
-  border-left: 2px solid rgba(255, 255, 255, 0.4);
-  border-right: 2px solid rgba(255, 255, 255, 0.4);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 0 0 40px 40px;
   clip-path: ellipse(120% 100% at 50% 0%);
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.05); /* subtle transparent white */
-  backdrop-filter: blur(12px); /* frosted glass effect */
-  -webkit-backdrop-filter: blur(12px); /* for Safari */
+
+  background: rgba(0, 0, 0); /* translucent white for glass effect */
+  backdrop-filter: blur(15px) saturate(160%);
+  -webkit-backdrop-filter: blur(15px) saturate(160%);
 }
+
 
 .navbar-container::before {
   content: '';
@@ -287,6 +294,18 @@ const CurvedNavbar = () => {
             font-size: 16px;
           }
         }
+
+  .navbar-children-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
       `}</style>
     </div>
   );

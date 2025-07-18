@@ -113,12 +113,12 @@ export default function SpinToWin() {
             <div className={`spinner-pointer ${isSpinning ? "spinning" : ""}`}></div>
           </div>
 
-          <button className="demo-spin-button" onClick={handleDemoSpin} disabled={isSpinning}>
-            <div className="button-content">
-              <RotateCcw />
-              <span>Demo Spin</span>
-            </div>
-            <div className="button-badge">1</div>
+          <button className="spin-demo-btn" onClick={handleDemoSpin} disabled={isSpinning}>
+            <span className="spin-btn-content">
+              <RotateCcw className="spin-btn-icon" />
+              <span className="spin-btn-label">Demo Spin</span>
+            </span>
+            <span className="spin-btn-count">1</span>
           </button>
         </div>
 

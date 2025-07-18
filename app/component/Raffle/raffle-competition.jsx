@@ -107,7 +107,7 @@ export default function RaffleCompetition() {
               {/* Percentage indicator above the bar */}
               <div
                 className="progress-percentage-indicator"
-                style={{ left: `calc(${progressPercentage}% - 18px)` }}
+                style={{ left: `${progressPercentage}%` }}
               >
                 <div className="progress-percentage-value">
                   {progressPercentage.toFixed(2).replace('.', ',')}%
@@ -119,6 +119,11 @@ export default function RaffleCompetition() {
                 <div
                   className="progress-ticks-unfilled"
                   style={{ left: `${progressPercentage}%`, width: `calc(100% - ${progressPercentage}%)`, position: 'absolute', top: 0, height: '100%' }}
+                ></div>
+                {/* Custom thumb at the end of progress bar */}
+                <div
+                  className="progress-thumb"
+                  style={{ left: `calc(${progressPercentage}% - 16px)` }}
                 ></div>
               </div>
             </div>
@@ -132,12 +137,17 @@ export default function RaffleCompetition() {
 
         {/* Right Column - Car Image with Circle */}
         <div className="raffle-visual">
-          <div className="car-circle-container">
-            <div className="car-circle">
+          <div className="car-ellipse-container">
+            <div className="car-ellipse">
+              {/* Ellipse using SVG for perfect control */}
+              <svg width="100%" height="100%" viewBox="0 0 600 160" style={{ position: 'absolute', left: 0, bottom: 0, zIndex: 1 }}>
+                <ellipse cx="300" cy="140" rx="290" ry="60" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="2" />
+              </svg>
               <img
-                src="/placeholder.svg?height=400&width=600&text=Lamborghini+Aventador"
+                src="/Images/Lambo.png"
                 alt="Lamborghini Aventador LP 770-4 SVJ Cabrio"
                 className="car-image"
+                style={{ position: 'relative', zIndex: 2, width: '90%', height: 'auto', marginTop: '10px', marginBottom: '0' }}
               />
             </div>
             <div className="price-display">
