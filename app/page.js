@@ -5,7 +5,7 @@ import WinnersParticipants from "./component/WinnerParticipant/winners-participa
 import SpinToWin from "./component/SpinToWin/spin-to-win";
 import BuyTicketsSection from "./component/BuyTicket/buy-ticket";
 import RaffleCompetition from "./component/Raffle/raffle-competition";
-import Navbar from "./component/navbar/navbar";
+import NewNavbar from "./component/navbar/NewNavbar";
 import { AddBox } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
@@ -15,7 +15,7 @@ export default function Home() {
     <>
     <Box sx={{backgroundColor:""}}>
     
-    <Navbar/>
+    <NewNavbar/>
     <RaffleCompetition/>
     <BuyTicketsSection/>
     <SpinToWin/>

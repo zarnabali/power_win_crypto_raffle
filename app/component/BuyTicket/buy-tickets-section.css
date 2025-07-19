@@ -6,11 +6,13 @@
   gap: 50px;
   padding: 40px 40px 16px 40px;
   margin: 0 0 16px 0;
-  border-radius: 24px;
+  border-left: 2px solid #D9D9D9;
+  border-right: 2px solid #D9D9D9;
   width: 100%;
   align-items: stretch;
   position: relative;
   overflow: hidden;
+  margin-bottom: 0px;
   box-sizing: border-box;
   }
   

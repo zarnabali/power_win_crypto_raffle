@@ -3,12 +3,13 @@
   grid-template-columns: 1fr;
   gap: 40px !important;
   padding: 40px;
-  border-radius: 24px;
   color: #ffffff;
   margin: 0;
   align-items: stretch;
   position: relative;
   overflow: hidden;
+  border-left: 2px solid #D9D9D9;
+  border-right: 2px solid #D9D9D9;
   font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 

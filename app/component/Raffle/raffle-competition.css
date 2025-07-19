@@ -1,9 +1,9 @@
 .raffle-competition-container {
     background-color: linear-gradient(top #8C8C8CCC 80%,#0000004D 30%);
     color: #ffffff;
+    border-left: 2px solid #D9D9D9;
+    border-right: 2px solid #D9D9D9;
     padding: 40px;
-    border: 1px solid #333333;
-    border-radius: 12px;
     margin: 0;
   }
   

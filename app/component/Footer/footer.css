@@ -2,6 +2,11 @@
 .footer {
   background: linear-gradient(to bottom, #000000C4, #00000047);
   font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, sans-serif;
+  border-left: 2px solid #D9D9D9;
+  border-right: 2px solid #D9D9D9;
+  border-bottom: 2px solid #D9D9D9;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
 }
 
 .footer-container {
