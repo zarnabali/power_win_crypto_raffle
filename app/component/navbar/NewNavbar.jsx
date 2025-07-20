@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { ChevronDown, CreditCard, User, Globe, Bell, Menu, Play } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const NewNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <>
@@ -33,29 +35,42 @@ const NewNavbar = () => {
           
           {/* Box 2 - 50% width with navigation buttons */}
           <div className="w-1/2 h-16 mt-[24px] bg-black rounded-b-3xl border-2 border-solid border-l-0 border-t-0 border-[#D9D9D9] flex items-center justify-center relative">
-            <div className="flex items-center space-x-2 w-full justify-center px-2 absolute -top-2">
-              <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm transition-colors flex-1 shadow-lg border border-[#D9D9D9]">
+            <div className="flex items-center gap-x-2 w-full justify-center px-2 absolute -top-2">
+              <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm transition-colors shadow-lg border border-[#D9D9D9] ml-1">
                 Home
               </button>
               
               <div className="relative group flex-1">
-                <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm flex items-center space-x-1 transition-colors w-full justify-center shadow-lg border border-[#D9D9D9]">
+                <button 
+                  className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm flex items-center space-x-1 transition-colors w-full justify-center shadow-lg border border-[#D9D9D9]"
+                  onClick={() => router.push('/competitions')}
+                >
                   <span>Competitions</span>
                   <ChevronDown className="w-3 h-3" />
                 </button>
                 <div className="absolute top-full left-0 mt-1 bg-gray-700 border border-gray-600 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 w-full">
                   <div className="py-1">
-                    <div className="px-3 py-1 text-white hover:bg-gray-600 text-xs cursor-pointer">Active</div>
-                    <div className="px-3 py-1 text-white hover:bg-gray-600 text-xs cursor-pointer">Ended</div>
+                    <div 
+                      className="px-3 py-1 text-white hover:bg-gray-600 text-xs cursor-pointer"
+                      onClick={() => router.push('/competitions')}
+                    >
+                      Active
+                    </div>
+                    <div 
+                      className="px-3 py-1 text-white hover:bg-gray-600 text-xs cursor-pointer"
+                      onClick={() => router.push('/competitions')}
+                    >
+                      Ended
+                    </div>
                   </div>
                 </div>
               </div>
               
-              <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm transition-colors flex-1 shadow-lg border border-[#D9D9D9]">
+              <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm transition-colors shadow-lg border border-[#D9D9D9]">
                 Winners
               </button>
               
-              <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm transition-colors flex-1 shadow-lg border border-[#D9D9D9]">
+              <button className="bg-[#2e2e2e] hover:bg-[#3a3a3a] text-white rounded-full px-6 py-3 h-14 text-sm transition-colors shadow-lg border border-[#D9D9D9] mr-1">
                 Referral
               </button>
             </div>
@@ -75,12 +90,15 @@ const NewNavbar = () => {
               </button>
               
               {/* User Button with 3 rows */}
-              <button className="bg-[#2e2e2e] mt-4  hover:bg-[#3a3a3a] text-white rounded-2xl px-4 py-2  text-xs transition-colors shadow-lg border border-[#D9D9D9] flex flex-col items-center justify-center min-w-24">
+              <button
+                className="bg-[#2e2e2e] mt-4  hover:bg-[#3a3a3a] text-white rounded-2xl px-4 py-2  text-xs transition-colors shadow-lg border border-[#D9D9D9] flex flex-col items-center justify-center min-w-24"
+                onClick={() => router.push('/account-settings')}
+              >
                 <div className="flex items-center space-x-2 mb-1">
                   <User className="w-4 h-4" />
                   <span className="font-semibold">John Doe</span>
                 </div>
-                <div className="text-gray-300 text-xs">johndoe@gmail.com</div>
+                <div className="text-gray-300 text-[11px] truncate overflow-hidden whitespace-nowrap max-w-[90px] text-center">johndoe@gmail.com</div>
                 <div className="text-gray-300 text-xs">User Profile</div>
               </button>
               
@@ -144,7 +162,10 @@ const NewNavbar = () => {
             <button className="w-full text-left text-white py-2 px-3 hover:bg-gray-600 rounded">
               Home
             </button>
-            <button className="w-full text-left text-white py-2 px-3 hover:bg-gray-600 rounded">
+            <button 
+              className="w-full text-left text-white py-2 px-3 hover:bg-gray-600 rounded"
+              onClick={() => { setIsMobileMenuOpen(false); router.push('/competitions'); }}
+            >
               Competitions
             </button>
             <button className="w-full text-left text-white py-2 px-3 hover:bg-gray-600 rounded">
@@ -158,7 +179,10 @@ const NewNavbar = () => {
                 <CreditCard className="w-4 h-4" />
                 <span>Wallet</span>
               </button>
-              <button className="w-full text-left text-white py-2 px-3 hover:bg-gray-600 rounded flex items-center space-x-2">
+              <button
+                className="w-full text-left text-white py-2 px-3 hover:bg-gray-600 rounded flex items-center space-x-2"
+                onClick={() => { setIsMobileMenuOpen(false); router.push('/account-settings'); }}
+              >
                 <User className="w-4 h-4" />
                 <span>Profile</span>
               </button>

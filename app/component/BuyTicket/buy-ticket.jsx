@@ -9,6 +9,7 @@ import "./buy-tickets-section.css"
 export default function BuyTicketsSection() {
   const [ticketCount, setTicketCount] = useState(125)
   const [sliderValue, setSliderValue] = useState(25) // 25% of max (500)
+  const [activePreset, setActivePreset] = useState("25%")
 
   const minTickets = 1
   const maxTickets = 500
@@ -52,6 +53,7 @@ export default function BuyTicketsSection() {
 
     setSliderValue(newValue)
     setTicketCount(newTickets)
+    setActivePreset(preset)
   }
 
   const handleMinusClick = () => {
@@ -74,21 +76,36 @@ export default function BuyTicketsSection() {
 
         {/* Preset Buttons */}
         <div className="preset-buttons">
-          {["Min", "10%", "25%", "50%", "Max"].map((preset) => (
-            <button
-              key={preset}
-              className={`preset-button ${preset === "25%" ? "active" : ""}`}
-              onClick={() => handlePresetClick(preset)}
-            >
-              {preset}
-            </button>
-          ))}
+          {/* Mobile layout - horizontal scrollable row */}
+          <div className="md:hidden flex gap-2 overflow-x-auto mb-2">
+            {["Min", "10%", "25%", "50%", "Max"].map((preset) => (
+              <button
+                key={preset}
+                className={`preset-button mobile-preset-btn ${activePreset === preset ? "active" : ""}`}
+                onClick={() => handlePresetClick(preset)}
+              >
+                {preset}
+              </button>
+            ))}
+          </div>
+          {/* Desktop layout - horizontal row */}
+          <div className="hidden md:flex gap-2">
+            {["Min", "10%", "25%", "50%", "Max"].map((preset) => (
+              <button
+                key={preset}
+                className={`preset-button ${activePreset === preset ? "active" : ""}`}
+                onClick={() => handlePresetClick(preset)}
+              >
+                {preset}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Ticket Display - moved to slider-container */}
-        {/* <div className="ticket-display">
-          <div className="ticket-count">{ticketCount} tickets</div>
-        </div> */}
+        {/* Ticket Display - Mobile only, positioned above slider */}
+        <div className="md:hidden flex justify-center mb-4">
+          <div className="ticket-count mobile-ticket-count">{ticketCount} tickets</div>
+        </div>
 
         {/* Slider Section */}
         <div className="slider-section">
@@ -97,9 +114,9 @@ export default function BuyTicketsSection() {
           </button>
 
           <div className="slider-container" style={{ position: 'relative' }}>
-            {/* Ticket count cloud above slider thumb */}
+            {/* Ticket count cloud above slider thumb - Desktop only */}
             <div
-              className="ticket-count-slider"
+              className="ticket-count-slider hidden md:block"
               style={{
                 position: 'absolute',
                 left: `calc(${sliderValue}% - 40px)`, // 40px is half the width of the cloud for centering
@@ -132,7 +149,7 @@ export default function BuyTicketsSection() {
       </div>
 
       {/* Right Column - Description */}
-      <div className="description-column" style={{ position: 'relative' }}>
+      <div className="description-column hidden md:block" style={{ position: 'relative' }}>
         {/* Ellipse shadow under car image */}
         <h2 className="column-title">Description</h2>
         <div className="description-content">

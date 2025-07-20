@@ -1,0 +1,257 @@
+/* Competitions Page Styles */
+
+/* Page background */
+.competitions-page {
+  background-color: #222222;
+  min-height: 100vh;
+}
+
+/* Card background */
+.card-gradient {
+  background-color: #333333;
+}
+
+/* Custom scrollbar for prize carousel */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Glass morphism effect for cards */
+.glass-card {
+  background-color: #333333;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effects for interactive elements */
+.interactive-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Prize card animations */
+.prize-card {
+  transition: all 0.3s ease;
+  background-color: #333333;
+}
+
+.prize-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Live winners animation */
+.live-winner {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Prize carousel specific styles */
+.prize-carousel-item {
+  transition: all 0.3s ease;
+  background-color: #333333;
+}
+
+.prize-carousel-item.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.prize-carousel-item.inactive {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+/* Demo spin button styles */
+.demo-spin-button {
+  background: linear-gradient(to bottom, #FF3333 0%, #CC0000 100%);
+  transition: all 0.3s ease;
+}
+
+.demo-spin-button:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Tab navigation styles */
+.tab-button {
+  transition: all 0.3s ease;
+  background-color: #333333;
+}
+
+.tab-button.active {
+  background: linear-gradient(to bottom, #999999 0%, #666666 100%);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.tab-button:not(.active) {
+  background: linear-gradient(to bottom, #444444 0%, #333333 100%);
+}
+
+.tab-button:not(.active):hover {
+  opacity: 0.8;
+}
+
+/* Search bar styles */
+.search-bar {
+  background-color: #333333;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Live winners table styles */
+.winners-table {
+  background-color: #333333;
+  backdrop-filter: blur(10px);
+}
+
+.winner-row-highlighted {
+  background: linear-gradient(90deg, rgba(251, 146, 60, 0.2), rgba(245, 158, 11, 0.2));
+}
+
+/* Button styles with gradient */
+.gradient-button {
+  background-color: #333333;
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* Input field styles */
+.gradient-input {
+  background-color: #333333;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .competitions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .prize-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .prize-carousel {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .demo-spin-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .competitions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prize-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tab-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Prize card hover effects */
+.prize-grid-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: #333333;
+}
+
+.prize-grid-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Active indicator styles */
+.active-indicator {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 64px;
+  background: #ef4444;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+/* Enhanced gradient effects */
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Smooth transitions for all gradient elements */
+* {
+  transition: background 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+} 

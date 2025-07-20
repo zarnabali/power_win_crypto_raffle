@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ExternalLink, Trophy, Ticket } from "lucide-react"
+import { ExternalLink, Trophy, Ticket, X } from "lucide-react"
 import "./raffle-competition.css"
 
 export default function RaffleCompetition() {
@@ -16,6 +16,8 @@ export default function RaffleCompetition() {
   const soldTickets = 68157
   const progressPercentage = (soldTickets / totalTickets) * 100
   const ticketPrice = 8.5
+
+  const [showPrizeModal, setShowPrizeModal] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -55,7 +57,67 @@ export default function RaffleCompetition() {
             </div>
           </div>
 
+          {/* Mobile-only badges - centered */}
+          <div className="md:hidden mobile-badges-container flex justify-center gap-4 mt-4">
+            <div className="status-badge w-32 h-10 flex items-center justify-center text-center">
+              <img src="/Vector.svg" alt="status icon" width="15" height="12" className="mr-2" />
+              Ongoing
+            </div>
+            <div className="chainlink-badge w-32 h-10 flex items-center justify-center text-center">Chainlink VRF</div>
+          </div>
+
           <p className="cash-alternative">Cash Alternative - $500,000</p>
+
+          {/* Mobile-only car display - shows below cash alternative */}
+          <div className="md:hidden mobile-car-container">
+            <div className="car-ellipse-container">
+              <div className="car-ellipse">
+                {/* Car image positioned to sit on ellipse */}
+                <img
+                  src="/Images/Lambo.png"
+                  alt="Lamborghini Aventador LP 770-4 SVJ Cabrio"
+                  className="car-image"
+                />
+                {/* Ellipse positioned behind/under the car */}
+                <svg className="ellipse-svg" viewBox="0 0 600 160">
+                  <ellipse cx="300" cy="80" rx="290" ry="60" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="2" />
+                </svg>
+              </div>
+              <div className="price-display">
+                <span>${ticketPrice.toFixed(2)}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile-only Prize Description Button (moved below car, above timer) */}
+          <div className="w-full flex justify-center md:hidden mt-4 mb-2">
+            <button
+              className="bg-[#18181b] text-white border border-gray-600 rounded-lg px-4 py-2 text-sm font-medium shadow hover:bg-[#232326] transition"
+              onClick={() => setShowPrizeModal(true)}
+            >
+              Prize Description
+            </button>
+          </div>
+
+          {/* Prize Description Modal (Mobile only) */}
+          {showPrizeModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 md:hidden">
+              <div className="bg-[#18181b] rounded-xl shadow-lg max-w-[90vw] w-full mx-4 p-5 relative border border-gray-700">
+                <button
+                  className="absolute top-3 right-3 text-gray-400 hover:text-white"
+                  onClick={() => setShowPrizeModal(false)}
+                  aria-label="Close"
+                >
+                  <X size={22} />
+                </button>
+                <h2 className="text-lg font-semibold mb-2 text-white">Description</h2>
+                <h3 className="text-base font-medium mb-2 text-white">Model: Lamborghini Aventador LP 770-4 SVJ Cabrio</h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Lamborghini Aventador SVJ Roadster is a limited-edition open-top supercar that blends extreme performance with unmistakable Italian design. Powered by a naturally aspirated 6.5L V12 engine delivering 770 horsepower, it accelerates from 0 to 100 km/h in just 2.9 seconds. With advanced aerodynamics (ALA 2.0 system), carbon fiber construction, and all-wheel drive, the SVJ Roadster offers an exhilarating driving experience both on the road and track—while letting you enjoy the raw sound of the V12 with the roof down.
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="countdown-section">
             <p className="countdown-label">Competition Ends In:</p>
@@ -76,7 +138,7 @@ export default function RaffleCompetition() {
                 <span className="time-number">{timeLeft.seconds}</span>
                 <span className="time-label">Seconds</span>
               </div>
-              <div className="chainlink-badge">Chainlink VRF</div>
+              <div className="chainlink-badge md:block hidden">Chainlink VRF</div>
             </div>
           </div>
 

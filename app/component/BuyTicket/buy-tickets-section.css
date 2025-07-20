@@ -353,6 +353,46 @@
       font-size: 16px;
       padding: 14px 20px;
     }
+    
+    /* Mobile-specific improvements */
+    .preset-buttons .grid {
+      gap: 8px;
+    }
+    
+    .preset-buttons .grid .preset-button {
+      padding: 12px 16px;
+      font-size: 14px;
+      min-width: auto;
+      flex: 1;
+    }
+    
+    .preset-buttons .flex.justify-center .preset-button {
+      padding: 12px 24px;
+      font-size: 14px;
+      min-width: 120px;
+    }
+    
+    /* Mobile ticket display styling */
+    .mobile-ticket-count {
+      background: rgba(40,40,40,0.85);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+    }
+    
+    /* Mobile slider section spacing */
+    .slider-section {
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .description-column {
+      display: none !important;
+    }
   }
   
 .ellipse-shadow {
@@ -401,5 +441,15 @@
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid rgba(40,40,40,0.85);
+}
+
+/* Make mobile preset buttons slightly bigger for mobile */
+.mobile-preset-btn {
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  min-width: 64px !important;
+  min-height: 36px !important;
+  max-width: 80px;
+  border-radius: 8px;
 }
   
